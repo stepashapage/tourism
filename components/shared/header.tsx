@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { ModalHeader } from "./modalHeader";
 import { ModalRegister } from "./modalRegister";
 import { ModalAccount } from "./modalAccount"; // Новый компонент для модального окна аккаунта
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase"; // Убедитесь, что путь правильный
 
 type Props = {

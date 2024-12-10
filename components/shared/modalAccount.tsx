@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { auth } from "../../firebase"; // Убедитесь, что путь правильный
 
 type Props = {
