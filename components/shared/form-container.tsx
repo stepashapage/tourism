@@ -35,7 +35,7 @@ export const Form_container: React.FC = () => {
   };
 
   const modalStyle = {
-    position: "absolute" as "absolute",
+    position: "absolute",
     top: "25%",
     left: "calc(50% - 200px)",
     transform: "translate(-50%, -50%)",
@@ -49,7 +49,7 @@ export const Form_container: React.FC = () => {
     flexDirection: "column",
     alignItems: "center",
     color: "#000",
-  };
+  } as const;
 
   return (
     <div className="flex gap-4">
