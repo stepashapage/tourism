@@ -4,8 +4,6 @@ import { Tour_item } from "./tour-item";
 import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
-type Props = {};
-
 interface ToursItem {
   name: string;
   description: string;
@@ -15,7 +13,7 @@ interface ToursItem {
   id: string; // Измените тип id на string
 }
 
-export const Tours_container: React.FC<Props> = ({}) => {
+export const Tours_container: React.FC = ({}) => {
   const [tours, setTours] = useState<ToursItem[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -47,7 +45,7 @@ export const Tours_container: React.FC<Props> = ({}) => {
 
   return (
     <div className="max-w-[1350px] mx-auto flex flex-col gap-[215px]">
-      {tours.map((item, i) => (
+      {tours.map((item) => (
         <Tour_item
           key={item.id}
           id={item.id}

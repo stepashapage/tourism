@@ -4,22 +4,10 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Form_container } from "@/components/shared/form-container";
 import { Calendar, Clock8, Wallet } from "lucide-react";
-import { ImageConfigContext } from "next/dist/server/route-modules/pages/vendored/contexts/entrypoints";
-
-interface ToursItem {
-  name: string;
-  description: string;
-  price: string;
-  img: string;
-  Date: string;
-  id?: string; // Добавьте опциональное поле id
-}
 
 const Tours: React.FC = () => {
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");
   const name = searchParams.get("name");
-  const description = searchParams.get("description");
   const price = searchParams.get("price");
   const img = searchParams.get("img");
   const Date = searchParams.get("Date");

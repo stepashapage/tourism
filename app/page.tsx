@@ -155,7 +155,7 @@ export default function Home() {
           </button>
         </div>
         <div className="flex flex-col gap-[100px] max-w-[1450px] mx-auto pt-[120px]">
-          {items.map((item, i) => (
+          {items.map((item) => (
             <div
               key={item.key}
               className="relative flex gap-[90px] items-center after:content-[''] after:absolute after:bottom-[-50px] after:block after:h-[2px] after:bg-[#F3F3F3] after:w-full after:mt-2 after:pl-[-4px]"

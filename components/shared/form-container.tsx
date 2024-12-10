@@ -12,9 +12,7 @@ import { motion } from "framer-motion";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CloseIcon from "@mui/icons-material/Close";
 
-type Props = {};
-
-export const Form_container: React.FC<Props> = () => {
+export const Form_container: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(false);
