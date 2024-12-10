@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/shared/header";
+import { Footer } from "@/components/shared/footer";
 
 const InterTight = Inter_Tight({
   subsets: ["cyrillic"],
@@ -25,6 +26,7 @@ export default function RootLayout({
         <main className="min-h-screen relative">
           <Header />
           {children}
+          <Footer />
         </main>
       </body>
     </html>

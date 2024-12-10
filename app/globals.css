@@ -18,3 +18,12 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
+
+@layer utilities {
+  .backdrop-blur-58 {
+    backdrop-filter: blur(58px);
+  }
+  .bg-fill-101315-41 {
+    background-color: rgba(16, 19, 21, 0.41);
+  }
+}

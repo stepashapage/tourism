@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { ModalHeader } from "./modalHeader";
 import { ModalRegister } from "./modalRegister";
@@ -56,7 +57,9 @@ export const Header: React.FC<Props> = ({ className }) => {
     <>
       <header className={cn("z-[1] absolute t0 l0 w-full", className)}>
         <div className="flex justify-between align-center pt-8 px-4 max-w-[1200px] mx-auto">
-          <Link href="/">Logo</Link>
+          <Link href="/">
+            <Image src="/logo.svg" alt="Logo" width={210} height={20} />
+          </Link>
           <ul className="flex gap-16 uppercase text-base font-bold">
             <li>Индивидуальные туры</li>
             <li>Груповые туры</li>
