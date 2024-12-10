@@ -11,7 +11,6 @@ type Props = {
 };
 
 export const ModalHeader: React.FC<Props> = ({
-  className,
   isOpen,
   onClose,
   onRegisterClick,

@@ -5,18 +5,27 @@ import React, { useState, useEffect } from "react";
 import { ModalHeader } from "./modalHeader";
 import { ModalRegister } from "./modalRegister";
 import { ModalAccount } from "./modalAccount"; // Новый компонент для модального окна аккаунта
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, User as FirebaseUser } from "firebase/auth";
 import { auth } from "../../firebase"; // Убедитесь, что путь правильный
 
 type Props = {
   className?: string;
 };
 
+// interface User {
+//   uid: string | null;
+//   email: string | null;
+//   displayName: string | null;
+//   metadata: {
+//     creationTime: string | undefined;
+//   };
+// }
+
 export const Header: React.FC<Props> = ({ className }) => {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
   const [isRegisterVisible, setIsRegisterVisible] = useState(false);
   const [isAccountVisible, setIsAccountVisible] = useState(false);
-  const [user, setUser] = useState<any>(null); // Состояние для хранения информации о пользователе
+  const [user, setUser] = useState<FirebaseUser | null>(null); // Состояние для хранения информации о пользователе
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {

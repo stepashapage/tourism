@@ -11,7 +11,6 @@ type Props = {
 };
 
 export const ModalRegister: React.FC<Props> = ({
-  className,
   isOpen,
   onClose,
   onLoginClick,

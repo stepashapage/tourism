@@ -1,21 +1,25 @@
 import React, { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { signOut } from "firebase/auth";
+import { signOut, User as FirebaseUser } from "firebase/auth";
 import { auth } from "../../firebase"; // Убедитесь, что путь правильный
 
 type Props = {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
-  user: any; // Информация о пользователе
+  user: FirebaseUser | null; // Информация о пользователе
 };
 
-export const ModalAccount: React.FC<Props> = ({
-  className,
-  isOpen,
-  onClose,
-  user,
-}) => {
+// interface User {
+//   uid: string;
+//   email: string | null;
+//   displayName: string | null;
+//   metadata: {
+//     creationTime: string | undefined;
+//   };
+// }
+
+export const ModalAccount: React.FC<Props> = ({ isOpen, onClose, user }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleSignOut = async () => {
@@ -50,7 +54,7 @@ export const ModalAccount: React.FC<Props> = ({
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen && user && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
