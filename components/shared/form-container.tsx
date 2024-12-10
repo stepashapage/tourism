@@ -42,7 +42,7 @@ export const Form_container: React.FC = () => {
     width: 400,
     backgroundColor: "#fff",
     border: "none",
-    boxShadow: 24,
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // Corrected boxShadow value
     paddingBottom: 24,
     borderRadius: 8,
     display: "flex",
